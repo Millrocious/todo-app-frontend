@@ -1,4 +1,7 @@
 export interface Task {
-    taskName: string;
+    id: number;
+    name: string;
     description: string;
+    isDone: boolean;
+    owner: string;
 }
