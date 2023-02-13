@@ -102,9 +102,10 @@ body {
 }
 
 .task .completeBtn, .taskCompleted .completeBtn  {
-    flex: 10%;
-    height: 100%;
+    flex: 8%;
+    height: 75%;
     border: none;
+    margin-top: 1.2%;
     background-color: #353535;
     border-radius: 100px;
     color: white;
