@@ -5,3 +5,10 @@ export interface Task {
     isDone: boolean;
     owner: string;
 }
+
+export interface User {
+    id: number;
+    name: string;
+    email: string;
+    role: string;
+}
