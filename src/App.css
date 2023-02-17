@@ -136,4 +136,29 @@ body {
     max-height: 25px;
 }
 
+.menuPanel {
+    position: absolute; /* becomes a layer */
+    right: 2%; /* relative to its parent wrapper */
+    top: 4%; /* relative to its parent wrapper */
+    z-index: 2;
+    font-size: 30px;
+    width: 300px;
+    height: 75px;
+    border-radius: 30px;
+    border: 4px solid #3a3a3a;
+    background-color: #313131;
+    display: flex;
+    align-items: center;
+}
 
+.authBtn {
+    width: 100px;
+    height: 50px;
+    border-radius: 100px;
+    border: none;
+    background-color: #6371bc;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-left: 12px;
+}
