@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useState} from "react";
 import {createTask} from "../services/TaskService";
+import Button from "./Button";
 
 const HeaderTask = () => {
     const [taskName, setTaskName] = useState<string>("");
@@ -23,7 +24,11 @@ const HeaderTask = () => {
                        name="task"
                        value={taskName}
                        onChange={handleChange}/>
-                <button onClick={addTask}>Add Task</button>
+                <Button color={"#deae5f"} bColor={"#f0c674"} onClick={() => {
+                    addTask();
+                }}>
+                    Add task
+                </Button>
             </div>
         </div>
     )

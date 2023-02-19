@@ -1,34 +1,38 @@
-import React, {useEffect, useState} from "react";
-import {getCurrentUser, login, logout} from "../services/AuthService";
+import {login, logout} from "../services/AuthService";
+import Button from "./Button";
+import {UserStatus, useUserStatus} from "../context";
 
 const MenuPanel = () => {
-    const [isAuth, setIsAuth] = useState<boolean>(false);
+    const { userStatus, setUserStatus } = useUserStatus();
 
     const loginUser = (): void => {
         login("user@email.com", "user");
-        setIsAuth(true);
+        setUserStatus(UserStatus.LoggedIn);
     }
 
     const logoutUser = () => {
         logout();
-        setIsAuth(false);
+        setUserStatus(UserStatus.LoggedOff);
     }
-
-    useEffect(() => {
-        const user = getCurrentUser();
-        user.email ? setIsAuth(true) : setIsAuth(false);
-    }, [])
 
     return(
         <div className="menuPanel">
             {
-                isAuth ? (
+                userStatus == UserStatus.LoggedIn ? (
                     <div>
-                        <button className="authBtn" onClick={logoutUser}>logout</button>
+                        <Button color={"#9fa846"} bColor={"#b5bd68"} onClick={() => {
+                            logoutUser();
+                        }}>
+                            logout
+                        </Button>
                     </div>
                 ) : (
                     <div>
-                        <button className="authBtn" onClick={loginUser}>login</button>
+                        <Button color={"#6990b1"} bColor={"#81a2be"} onClick={() => {
+                            loginUser();
+                        }}>
+                            login
+                        </Button>
                     </div>
                 )
             }
