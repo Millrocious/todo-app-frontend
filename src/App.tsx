@@ -4,7 +4,7 @@ import {Task} from "./interfaces";
 import TodoTask from "./сomponents/TodoTask";
 import {getTasks} from "./services/TaskService";
 import HeaderTask from "./сomponents/HeaderTask";
-import MenuButton from "./сomponents/MenuPanel";
+import MenuPanel from "./сomponents/MenuPanel";
 
 const App = () => {
     const [todoList, setTodoList] = useState<Task[]>([]);
@@ -15,7 +15,7 @@ const App = () => {
 
     return (
     <div className="App">
-        <MenuButton/>
+        <MenuPanel/>
         <HeaderTask/>
         <div className="todolist">
             {todoList.map( (task: Task, key: number) => {
